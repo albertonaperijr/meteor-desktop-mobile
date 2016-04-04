@@ -16,6 +16,17 @@ function MainCtrl($rootScope, $scope, $log) {
     // Create update delete section
     //----------------------------------------------------------------------
 
+    vm.createTestFromClient = function() {
+        let test = {
+            text: 'Yes this is a test',
+            score: '999999999999'
+        }
+        $log.log(controllerName, '| createTestFromClient | test :', test);
+        Tests.insert(test, function(error, result) {
+            $log.log(controllerName, 'result :', result, 'error :', error);
+        });
+    };
+
     vm.createTest = function() {
         let test = {
             text: 'Yes this is a test',
