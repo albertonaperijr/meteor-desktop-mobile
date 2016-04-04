@@ -6,8 +6,8 @@ MainCtrl.$inject = ['$rootScope', '$scope', '$log'];
 
 function MainCtrl($rootScope, $scope, $log) {
 
-    var vm = this;
-    var controllerName = 'MainCtrl';
+    let vm = this;
+    let controllerName = 'MainCtrl';
     $log.log(controllerName);
 
     vm.device = 'Desktop';
@@ -15,6 +15,17 @@ function MainCtrl($rootScope, $scope, $log) {
     //----------------------------------------------------------------------
     // Create update delete section
     //----------------------------------------------------------------------
+
+    vm.createTest = function() {
+        let test = {
+            text: 'Yes this is a test',
+            score: '999999999999'
+        }
+        $log.log(controllerName, '| createTest | test :', test);
+        Meteor.call('createTest', test, function(error, result) {
+            $log.log(controllerName, 'result :', result, 'error :', error);
+        });
+    };
 
     //----------------------------------------------------------------------
     // Data retrieval section

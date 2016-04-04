@@ -42,10 +42,10 @@ App.setPreference('SplashScreenDelay', '3000');
 /**
  * Pass preferences for a particular PhoneGap/Cordova plugin
  **/
-App.configurePlugin('com.phonegap.plugins.facebookconnect', {
-    APP_ID: '1234567890',
-    API_KEY: 'supersecretapikey'
-});
+// App.configurePlugin('com.phonegap.plugins.facebookconnect', {
+//     APP_ID: '1234567890',
+//     API_KEY: 'supersecretapikey'
+// });
 
 /**
  * Set Access Rules
